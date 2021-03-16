@@ -13,7 +13,7 @@ An Inventory system with ability to add and manage Products.
 * Name, HSN Code, Display Unit, Tax, and Price are mendotary fields.
 * Product Type and Description are optional fields.
 
-##Product Detail Formate
+## Product Detail Formate
 * { 
   Name:iPhone 11 Pro, 
   hsn:1110,
