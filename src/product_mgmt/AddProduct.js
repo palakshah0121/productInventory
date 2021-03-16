@@ -126,7 +126,7 @@ class AddProduct extends React.Component {
                 <td className="error_msg">{this.state.errorMsg}</td>
               </tr>
             ) : (
-              ""
+              ``
             )}
             <tr>
               <td>

@@ -11,7 +11,9 @@ function Pagination({ productPerPage, totalProduct, paginate, currentPage }) {
         ? pageNumbers.map((number) => (
             <input
               type="button"
-              className={currentPage == number ? "selected_page" : "deselected"}
+              className={
+                currentPage === number ? "selected_page" : "deselected"
+              }
               onClick={() => paginate(number)}
               href="!#"
               key={number}
