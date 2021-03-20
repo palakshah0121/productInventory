@@ -1,5 +1,5 @@
 import React from "react";
-import { emptyproduct } from "./productList.json";
+import { emptyproduct, CONSTANTS } from "./productList.json";
 
 class AddProduct extends React.Component {
   constructor(productEdit) {
@@ -68,45 +68,28 @@ class AddProduct extends React.Component {
     }
   };
   field_validator(elemValue, elemName) {
+    const titles = Object.keys(CONSTANTS);
     switch (elemName) {
-      case "Name":
+      case titles[1]:
+      case titles[3]:
         if (elemValue === "") {
-          this.msgError.push("Name");
+          this.msgError.push(CONSTANTS[elemName]);
           this.setState({ errorFlag: 1 });
         }
         break;
-      case "hsn":
+      case titles[2]:
+      case titles[4]:
+      case titles[5]:
         if (elemValue === 0 && typeof elemValue != Number) {
-          this.msgError.push("HSN Code");
+          this.msgError.push(CONSTANTS[elemName]);
           this.setState({ errorFlag: 1 });
         }
         break;
-      case "unit":
-        if (elemValue === "") {
-          this.msgError.push("Display Unit");
-          this.setState({ errorFlag: 1 });
-        }
-        break;
-      case "tax":
-        if (elemValue === 0 && typeof elemValue != Number) {
-          this.msgError.push("Tax");
-          this.setState({ errorFlag: 1 });
-        }
-        break;
-      case "price":
-        if (elemValue === 0 && typeof elemValue != Number) {
-          this.msgError.push("Price");
-          this.setState({ errorFlag: 1 });
-        }
-        break;
-      case "type":
-      case "description":
       default:
         break;
     }
   }
   render() {
-    this.setState(this.props.prodDetails);
     return (
       <form
         id="addProdForm"
@@ -126,93 +109,101 @@ class AddProduct extends React.Component {
                 <td className="error_msg">{this.state.errorMsg}</td>
               </tr>
             ) : (
-              ``
+              <tr>
+                <td></td>
+              </tr>
             )}
             <tr>
               <td>
-                <div className="field_elem">
-                  <label>
-                    Name{this.astrictElem}:
-                    <input
-                      type="text"
-                      name="Name"
-                      value={this.state.Name}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-                <div className="field_elem">
-                  <label>
-                    HSN Code{this.astrictElem}:
-                    <input
-                      type="text"
-                      name="hsn"
-                      value={this.state.hsn}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-                <div className="field_elem">
-                  <label>
-                    Display Unit{this.astrictElem}:
-                    <input
-                      type="text"
-                      name="unit"
-                      value={this.state.unit}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-                <div className="field_elem">
-                  <label>
-                    Tax{this.astrictElem}:
-                    <input
-                      type="number"
-                      name="tax"
-                      value={this.state.tax}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-                <div className="field_elem">
-                  <label>
-                    Price{this.astrictElem}:
-                    <input
-                      type="number"
-                      name="price"
-                      value={this.state.price}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-                <div className="field_elem">
-                  <label>
-                    Product Type:
-                    <input
-                      type="text"
-                      name="type"
-                      value={this.state.type}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
-                </div>
-
-                <div className="field_elem">
-                  <label>
-                    Description:
-                    <textarea
-                      name="description"
-                      value={this.state.description}
-                      onChange={this.handleChange}
-                      className="input_elem"
-                    />
-                  </label>
+                <div className="input_box">
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Name}
+                      {this.astrictElem}:
+                      <input
+                        type="text"
+                        name="Name"
+                        value={this.state.Name}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.HSN}
+                      {this.astrictElem}:
+                      <input
+                        type="text"
+                        name="HSN"
+                        value={this.state.HSN}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Unit}
+                      {this.astrictElem}:
+                      <input
+                        type="text"
+                        name="unit"
+                        value={this.state.Unit}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Tax}
+                      {this.astrictElem}:
+                      <input
+                        type="number"
+                        name="tax"
+                        value={this.state.Tax}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Price}
+                      {this.astrictElem}:
+                      <input
+                        type="number"
+                        name="price"
+                        value={this.state.Price}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Type}:
+                      <input
+                        type="text"
+                        name="type"
+                        value={this.state.Type}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
+                  <div className="field_elem">
+                    <label>
+                      {CONSTANTS.Description}:
+                      <textarea
+                        name="description"
+                        value={this.state.Description}
+                        onChange={this.handleChange}
+                        className="input_elem"
+                      />
+                    </label>
+                  </div>
                 </div>
               </td>
             </tr>

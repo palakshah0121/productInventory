@@ -1,4 +1,4 @@
-import { emptyproduct } from "./productList.json";
+import { emptyproduct, CONSTANTS } from "./productList.json";
 
 function ProductList({ porducts, loading, modifyClick, delProdClick }) {
   if (loading) {
@@ -7,12 +7,12 @@ function ProductList({ porducts, loading, modifyClick, delProdClick }) {
   const titles = Object.keys(emptyproduct[0]);
   return (
     <div className="Add-form">
-      <table class="prod_list_table">
+      <table className="prod_list_table">
         <thead>
           <tr className="product_tr">
             {titles.map((titles, key) => (
               <th className="table_header" key={key}>
-                {titles}
+                {CONSTANTS[titles]}
               </th>
             ))}
             <th className="table_header" key="action">

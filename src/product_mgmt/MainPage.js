@@ -95,28 +95,30 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-          <div className="field_elem">
-            <label>
-              Name:
-              <input
-                type="text"
-                name="Name"
-                onChange={filterProduct}
-                className="input_elem"
-              />
-            </label>
-          </div>
-          <div className="field_elem">
-            <label>
-              Price :
-              <input
-                type="number"
-                name="price"
-                onChange={filterProduct}
-                className="input_elem"
-              />
-            </label>
-          </div>
+          <section className="search_box">
+            <div className="field_elem">
+              <label>
+                Name:
+                <input
+                  type="text"
+                  name="Name"
+                  onChange={filterProduct}
+                  className="input_elem"
+                />
+              </label>
+            </div>
+            <div className="field_elem">
+              <label>
+                Price :
+                <input
+                  type="number"
+                  name="price"
+                  onChange={filterProduct}
+                  className="input_elem"
+                />
+              </label>
+            </div>
+          </section>
 
           <ProductList
             modifyClick={modifyFunc}

@@ -3,24 +3,34 @@
     {
       "Id": 1,
       "Name": "iPhone 11 Pro4",
-      "hsn": 1110,
-      "unit": "piece",
-      "tax": 12,
-      "price": 25,
-      "type": "package",
-      "description": "this is cadbury product"
+      "HSN": 1110,
+      "Unit": "piece",
+      "Tax": 12,
+      "Price": 25,
+      "Type": "package",
+      "Description": "this is cadbury product"
     }
   ],
   "emptyproduct": [
     {
       "Id": "qwe",
       "Name": "",
-      "hsn": 0,
-      "unit": "",
-      "tax": 0,
-      "price": 0,
-      "type": "",
-      "description": ""
+      "HSN": 0,
+      "Unit": "",
+      "Tax": 0,
+      "Price": 0,
+      "Type": "",
+      "Description": ""
     }
-  ]
+  ],
+  "CONSTANTS": {
+    "Id": "#",
+    "Name": "Product Name",
+    "HSN": "HSN Code",
+    "Unit": "Display Unit",
+    "Tax": "Tax (in %)",
+    "Price": "Price",
+    "Type": "Type",
+    "Description": "Description"
+  }
 }

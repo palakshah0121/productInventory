@@ -12,14 +12,14 @@
   margin: 10px;
 }
 .main_container {
-    width: 90%;
+  width: 90%;
   max-width: max-content;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 20px;
   box-shadow: 0px 0px 15px -4px;
 }
 .prod_list_table {
-    margin: 10px;
+  margin: 10px;
   border-collapse: collapse;
 }
 .table_header {
@@ -36,7 +36,7 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-.table_btn{    
+.table_btn {
   padding: 6px 10px;
   margin: 4px 2px;
   cursor: pointer;
@@ -45,7 +45,12 @@
   text-align: center;
   border: 1px solid black;
   padding: 5px;
-  max-width:150px ;
+  max-width: 200px;
+}
+.input_box,
+.search_box {
+  margin: 20px 10px;
+  border: 1px solid lightgray;
 }
 .add_prod_btn {
   width: 50%;
@@ -85,21 +90,22 @@
   padding: 5px 20px;
 }
 .button_add_form {
-  padding: 10px 20px;
+  padding: 0px 0px 20px 20px;
 }
 .pagination_main {
   text-align: right;
   padding: 5px 20px;
 }
-.selected_page{
-    background-color: gray;
-    cursor: pointer;
+.selected_page {
+  background-color: gray;
+  cursor: pointer;
 }
-.deselected{ 
-    cursor: pointer;    
-    background-color: lightgray;
+.deselected {
+  cursor: pointer;
+  background-color: lightgray;
 }
-.error_msg,.mandatory_elem{
-    color: red;
-    text-align: center;
+.error_msg,
+.mandatory_elem {
+  color: red;
+  text-align: center;
 }
